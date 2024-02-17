@@ -104,7 +104,7 @@ class Aggregate(Resource) :
 
                 result.append({
                     'sensor_id': sensor_id,
-                    'timestamp': ist_datetime.strftime('%Y-%m-%d %H:%M:%S'),
+                    'timestamp': ist_datetime.strftim('%Y-%m-%d %H:%M:%S'),
                     'avg_temperature': entry.avg_temperature,
                     'max_temperature': entry.max_temperature,
                     'min_temperature': entry.min_temperature
@@ -112,7 +112,8 @@ class Aggregate(Resource) :
             return result, 200
         except Exception as e:
             print(str(e), '[error Aggregate]')
-            raise InternalServerError('Something Went Wrong')
+            # raise InternalServerError('Something Went Wrong')
+            return handle_error({'type': 'Internal Server Error','message': 'Something went wrong'}, 500)
 
 
 temperature_model = ns.model('temperature',{
@@ -163,8 +164,8 @@ class Temperature(Resource) :
             return {'message': f'Temperature data added successfully for sensor_id = {sensor_id}'}, 201
         except Exception as e:
             print(str(e), '[error in Temperature class]')
-            raise InternalServerError('Something Went Wrong')
-            return handle_error({'error': 'Internal Server Error','message': 'Something went wrong'}, 500)
+            # raise InternalServerError('Something Went Wrong')
+            return handle_error({'type': 'Internal Server Error','message': 'Something went wrong'}, 500)
 
 
 
