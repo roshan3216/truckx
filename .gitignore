@@ -1,5 +1,11 @@
 .venv
+.venv2
 helper
 __pycache__
 database
 utils
+instance
+.pytest_cache
+.env
+*.sql
+sql_data_generator*
