@@ -81,6 +81,7 @@ python main.py
   - `sensor_id` (integer): ID of the sensor.
   - `temperature` (integer): Temperature reading of the sensor.
   - `timestamp` (string): Timestamp when the reading is recorded in "YYYY-MM-DD HH:MM:SS" format.
+- **Example:**
 
   ```bash
   curl -X POST -H "Content-Type: application/json" -d '{
