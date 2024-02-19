@@ -91,6 +91,10 @@ python main.py
     }' http://127.0.0.1:5000/truckx/temperature
   ```
 
+## Background Scheduler
+
+The application includes a background scheduler that aggregates temperature data from sensors every hour. The aggregated data is stored in the database for future retrieval.
+
 ## Run the tests
 
 I have used [`pytest`](https://pytest.org/) to run the tests:
