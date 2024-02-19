@@ -1,5 +1,5 @@
-.venv
-.venv2
+# .venv
+# .venv2
 helper
 __pycache__
 database
@@ -9,3 +9,5 @@ instance
 .env
 *.sql
 sql_data_generator*
+.venv*
+instance
